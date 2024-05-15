@@ -15,12 +15,37 @@ if (randomValue < 0.33) {
     getComputerChoice = "paper"
 }
 
-console.log(getComputerChoice);
-
-// getHumanChoice
+console.log(getComputerChoice)
 
 // prompt user to choose string value
 // store string value
 // compare human string value to computer string value
 
+let getHumanChoice = prompt("Choose ROCK, PAPER or SCISSORS!").toLowerCase();
+console.log(getHumanChoice);
 
+function valueCompare() {
+    if (getHumanChoice === "rock" && getComputerChoice === "rock") {
+        return "It's a draw.";
+    } else if (getHumanChoice === "paper" && getComputerChoice === "paper") {
+        return "It's a draw.";
+    } else if (getHumanChoice === "scissors" && getComputerChoice === "scissors") {
+        return "It's a draw.";
+    } else if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
+        return "You win!";
+    } else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
+        return "You win!";
+    } else if (getHumanChoice === "scissors" && getComputerChoice === "paper") {
+        return "You win!";
+    } else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
+        return "You lose! :(";
+    } else if (getHumanChoice === "paper" && getComputerChoice === "scissors") {
+        return "You lose! :(";
+    } else if (getHumanChoice === "scissors" && getComputerChoice === "rock") {
+        return "You lose! :(";
+    } else {
+        return "Unsupported value";
+    } 
+}
+
+console.log(valueCompare())
