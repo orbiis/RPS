@@ -24,28 +24,61 @@ console.log(getComputerChoice)
 let getHumanChoice = prompt("Choose ROCK, PAPER or SCISSORS!").toLowerCase();
 console.log(getHumanChoice);
 
-function valueCompare() {
-    if (getHumanChoice === "rock" && getComputerChoice === "rock") {
-        return "It's a draw.";
-    } else if (getHumanChoice === "paper" && getComputerChoice === "paper") {
-        return "It's a draw.";
-    } else if (getHumanChoice === "scissors" && getComputerChoice === "scissors") {
-        return "It's a draw.";
-    } else if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
-        return "You win!";
-    } else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
-        return "You win!";
-    } else if (getHumanChoice === "scissors" && getComputerChoice === "paper") {
-        return "You win!";
-    } else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
-        return "You lose! :(";
-    } else if (getHumanChoice === "paper" && getComputerChoice === "scissors") {
-        return "You lose! :(";
-    } else if (getHumanChoice === "scissors" && getComputerChoice === "rock") {
-        return "You lose! :(";
-    } else {
-        return "Unsupported value";
-    } 
+function playRound() {
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function valueCompare() {
+        if (getHumanChoice === "rock" && getComputerChoice === "rock") {
+            return "It's a draw.";
+        } else if (getHumanChoice === "paper" && getComputerChoice === "paper") {
+            return "It's a draw.";
+        } else if (getHumanChoice === "scissors" && getComputerChoice === "scissors") {
+            return "It's a draw.";
+        } else if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
+            ++humanScore;
+            return "You win!";
+        } else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
+            ++humanScore;
+            return "You win!";
+        } else if (getHumanChoice === "scissors" && getComputerChoice === "paper") {
+            ++humanScore;
+            return "You win!";
+        } else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
+            ++computerScore;
+            return "You lose! :(";
+        } else if (getHumanChoice === "paper" && getComputerChoice === "scissors") {
+            ++computerScore;
+            return "You lose! :(";
+        } else if (getHumanChoice === "scissors" && getComputerChoice === "rock") {
+            ++computerScore;
+            return "You lose! :(";
+        } else {
+            return "Unsupported value";
+        } 
+    }
+
+    console.log(valueCompare())
+
+    console.log(humanScore);
+    console.log(computerScore);
 }
 
-console.log(valueCompare())
+playRound();
+
+// Declare humanScore
+// Declare computerScore
+// Initialize with 0
+
+
+
+
+
+// Single round logic
+// create function playRound
+// define parameters humanChoice and computerChoice and use as arguments
+
+//  play game
+//      play round x 5
+//          
